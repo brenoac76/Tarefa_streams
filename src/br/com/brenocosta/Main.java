@@ -16,21 +16,18 @@ public class Main {
         // Lista para armazenar as mulheres
         List<Pessoa> mulheres = new ArrayList<>();
 
-        // Usando if-else para verificar o gênero e filtrar as mulheres
-        for (Pessoa pessoa : pessoas) {
+        // Usando forEach com expressão lambda para filtrar as mulheres
+        pessoas.forEach(pessoa -> {
             if (pessoa.getGenero().equals("Feminino")) {
                 mulheres.add(pessoa);
             } else {
-
                 System.out.println(pessoa.getNome() + " não é mulher.");
             }
-        }
+        });
 
         // Imprimindo a lista de mulheres
         System.out.println("\nMulheres na lista:");
-        for (Pessoa mulher : mulheres) {
-            System.out.println(mulher);
-        }
+        mulheres.forEach(mulher -> System.out.println(mulher));
     }
 }
 
